@@ -79,7 +79,7 @@ print(shape)
 Query data:
 ```python
 # select track and artist columns
-q0 = listening_df.select("artisit", "track")
+q0 = listening_df.select("artist", "track")
 
 # find all records where users listened to Rihanna
 q1 = listening_df\
@@ -92,7 +92,7 @@ q2 = listening_df.select("user_id)\
 	.filter(listening_df == "Rihanna")\
 	.groupby("user_id")\
 	.agg( count("user_id").alias("count") )\
-	.orderBy( decs("count") )\
+	.orderBy( desc("count") )\
 	.limit(10)
 
 # find top 10 famous tracks
